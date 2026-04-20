@@ -7,7 +7,6 @@
 
 <style>
     :root {
-        --green: #1DB954;
         --black: #050505;
         --card: #181818;
         --text-dim: #b3b3b3;
@@ -64,58 +63,39 @@
     /* HERO */
     header.hero {
         width: 100%;
-        min-height: 50vh;
+        min-height: 25vh;
         background: linear-gradient(rgba(0,0,0,0.4), var(--black)), #111;
-        padding: 120px 5% 40px;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        padding: 100px 5% 40px;
+    }
+
+    .hero-inner {
         text-align: center;
-    }
-
-    .hero-inner h1 {
-        font-size: 3rem;
+        font-size: 1.2rem;
         letter-spacing: 3px;
+        color: white;
     }
 
-    /* CONTAINERS */
+    /* TYPEWRITER CURSOR */
+    #typewriter {
+        border-right: 2px solid white;
+        padding-right: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    /* CONTAINER */
     .container {
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
         padding: 40px 5%;
-        flex-grow: 1;
     }
 
     .section-header {
         margin-bottom: 20px;
-    }
-
-    /* PROFILE */
-    .profile-card {
-        display: flex;
-        gap: 30px;
-        background: var(--card);
-        padding: 20px;
-        border-radius: 12px;
-        align-items: center;
-    }
-
-    .profile-img img {
-        width: 180px;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 12px;
-    }
-
-    .profile-info h2 {
-        margin: 0 0 10px;
-    }
-
-    .profile-info p {
-        color: var(--text-dim);
-        line-height: 1.6;
-        margin-bottom: 10px;
     }
 
     /* GRID */
@@ -168,23 +148,8 @@
         background: var(--black);
     }
 
-    /* RESPONSIVE */
+    /* MOBILE */
     @media (max-width: 768px) {
-
-        .profile-card {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .profile-img img {
-            width: 140px;
-            height: 140px;
-        }
-
-        .hero-inner h1 {
-            font-size: 2.2rem;
-        }
-
         .discography-grid {
             grid-template-columns: 1fr 1fr;
         }
@@ -206,34 +171,14 @@
     </div>
 </nav>
 
-
-
-<!-- PROFILE -->
-<div class="container">
-
-    <div class="profile-card">
-
-        <div class="profile-img">
-            <img src="ceecuatro-profile.webp" alt="Cee Cuatro Profile">
-        </div>
-
-        <div class="profile-info">
-            <h2>Cee Cuatro</h2>
-
-            <p>
-                Cee Cuatro is a UK-based artist from West London, known for blending melodic rap, trap influences, and raw storytelling.
-            </p>
-
-            <p>
-                His music reflects ambition, emotion, and real-life experiences, building a growing presence across streaming platforms.
-            </p>
-        </div>
-
+<!-- HERO (TYPEWRITER) -->
+<header class="hero">
+    <div class="hero-inner">
+        <span id="typewriter"></span>
     </div>
+</header>
 
-</div>
-
-<!-- FEATURED SINGLES -->
+<!-- FEATURED -->
 <div class="container">
     <h2 class="section-header">Featured Singles</h2>
 
@@ -270,7 +215,7 @@
     </div>
 </div>
 
-<!-- SPOTIFY PLAYER -->
+<!-- SPOTIFY -->
 <div class="container">
     <h2 class="section-header">Listen Now</h2>
 
@@ -280,7 +225,6 @@
             width="100%"
             height="352"
             frameBorder="0"
-            allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy">
         </iframe>
@@ -291,6 +235,23 @@
 <footer>
     <p>CEE CUATRO © 2026 • WEST LONDON</p>
 </footer>
+
+<!-- TYPEWRITER SCRIPT -->
+<script>
+const text = "TOP 2 OUT NOW";
+let i = 0;
+const speed = 120;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+typeWriter();
+</script>
 
 </body>
 </html>
