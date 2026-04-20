@@ -6,113 +6,95 @@
 <title>Cee Cuatro | Official Site</title>
 
 <style>
-:root {
-    --primary: #ffffff;
-    --accent: #1DB954;
-    --bg-deep: #050505;
-    --bg-card: #121212;
-    --text-dim: #b3b3b3;
-}
+    :root {
+        --green: #1DB954;
+        --black: #050505;
+        --card: #181818;
+        --text-dim: #b3b3b3;
+    }
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: var(--bg-deep);
-    color: var(--primary);
-}
+    * { box-sizing: border-box; }
+    
+    body { 
+        margin: 0; 
+        font-family: sans-serif; 
+        background: var(--black); 
+        color: white; 
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
 
-/* NAV */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5%;
-}
+    /* Fix the Header/Hero */
+    header.hero {
+        width: 100%;
+        min-height: 50vh;
+        background: linear-gradient(rgba(0,0,0,0.4), var(--black)), #111;
+        padding: 100px 5% 40px;
+        display: flex;
+        justify-content: center; /* Centers the content */
+    }
 
-.logo {
-    font-weight: 900;
-    letter-spacing: 4px;
-    font-size: 1.5rem;
-}
+    .hero-inner {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
 
-/* SOCIAL ICONS */
-.top-socials {
-    display: flex;
-    gap: 20px;
-}
+    /* Fix the Grid Layout */
+    .main {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto; /* This centers the grid on your TV */
+        padding: 40px 5%;
+        flex-grow: 1;
+    }
 
-.top-socials svg {
-    width: 24px;
-    height: 24px;
-    fill: white;
-    transition: 0.3s;
-}
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+        width: 100%;
+    }
 
-.top-socials a:hover svg {
-    fill: var(--accent);
-    transform: scale(1.2);
-}
+    .card {
+        background: var(--card);
+        padding: 15px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        transition: 0.3s;
+    }
 
-/* CONTENT */
-.container {
-    padding: 3rem 5%;
-}
+    .card:hover { background: #282828; transform: translateY(-5px); }
 
-.section-header {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    border-left: 5px solid var(--accent);
-    padding-left: 15px;
-}
+    .card img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
 
-.discography-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 25px;
-}
+    /* Fix the Footer */
+    footer {
+        width: 100%;
+        padding: 60px 0;
+        text-align: center;
+        color: var(--text-dim);
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        background: var(--black);
+    }
 
-.album-card {
-    background: var(--bg-card);
-    padding: 15px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.album-card:hover {
-    background: #1a1a1a;
-    transform: translateY(-5px);
-}
-
-.img-container {
-    width: 100%;
-    aspect-ratio: 1/1;
-    overflow: hidden;
-    border-radius: 4px;
-}
-
-.album-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.album-card h4 {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-dim);
-    font-size: 0.8rem;
-}
+    /* Tablet/Phone adjustments */
+    @media (max-width: 768px) {
+        .hero-inner { flex-direction: column; text-align: center; }
+        .grid { grid-template-columns: 1fr 1fr; }
+    }
 </style>
 </head>
 
