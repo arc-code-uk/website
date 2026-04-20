@@ -46,7 +46,7 @@
 
         .top-socials a:hover { color: var(--accent); }
 
-        /* Featured Video Hero */
+        /* Video Section */
         .video-hero {
             position: relative;
             width: 100%;
@@ -55,7 +55,6 @@
             background: linear-gradient(to bottom, #111, #050505);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
         }
 
@@ -66,11 +65,42 @@
             box-shadow: 0 0 60px rgba(0,0,0,0.8);
             border: 1px solid #222;
             background: #000;
+            overflow: hidden;
         }
 
-        .video-info { text-align: center; margin-bottom: 30px; }
-        .video-info h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; text-transform: uppercase; letter-spacing: 8px; font-weight: 900; }
-        .badge { background: #fff; color: #000; padding: 4px 12px; font-weight: 800; font-size: 0.7rem; letter-spacing: 2px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* The Box Under the Video */
+        .video-link-box {
+            margin-top: 25px;
+            background: var(--bg-card);
+            border: 1px solid #333;
+            padding: 18px 50px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .video-link-box:hover {
+            border-color: var(--accent);
+            background: #1a1a1a;
+            transform: translateY(-3px);
+        }
+
+        .video-link-box h2 {
+            margin: 0;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 1.1rem;
+            font-weight: 900;
+        }
 
         /* Music Content */
         .container { padding: 4rem 5%; }
@@ -83,6 +113,8 @@
             margin-bottom: 5rem;
         }
 
+        .song-link { text-decoration: none; color: inherit; }
+
         .album-card {
             background: var(--bg-card);
             padding: 12px;
@@ -92,27 +124,12 @@
         }
 
         .album-card:hover { background: #1a1a1a; transform: translateY(-5px); }
-        .album-card img { 
-            width: 100%; 
-            aspect-ratio: 1/1; 
-            object-fit: cover; 
-            border-radius: 2px; 
-            display: block;
-            background: #222;
-        }
+        .album-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
         .album-card h4 { margin: 12px 0 4px 0; font-size: 0.9rem; text-transform: uppercase; }
-        .album-card span { color: var(--text-dim); font-size: 0.75rem; }
 
-        .player-wrapper {
-            background: var(--bg-card);
-            padding: 10px;
-            border-radius: 12px;
-        }
-
-        footer { text-align: center; padding: 3rem; color: var(--text-dim); font-size: 0.8rem; letter-spacing: 1px; }
+        footer { text-align: center; padding: 3rem; color: var(--text-dim); font-size: 0.8rem; }
 
         @media (max-width: 768px) {
-            .top-socials a { font-size: 1.3rem; margin-left: 15px; }
             .video-container { width: 95%; }
             .discography-grid { grid-template-columns: 1fr 1fr; }
         }
@@ -131,55 +148,53 @@
     </nav>
 
     <section class="video-hero">
-        <div class="video-info">
-            <span class="badge">LATEST VIDEO</span>
-            <h1>TOP 2</h1>
-        </div>
         <div class="video-container">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FjIuE6W4o9c?rel=0" title="Cee Cuatro - TOP 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <!-- Ensure your video file in GitHub is named 'top2.mp4' -->
+            <video controls autoplay muted loop playsinline>
+                <source src="top2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
+
+        <!-- Box under the video that links to the song -->
+        <a href="https://open.spotify.com/track/41e53a258079b768a8f89574" target="_blank" class="video-link-box">
+            <h2>TOP 2 — OUT NOW</h2>
+        </a>
     </section>
 
     <div class="container">
-        
         <h2 class="section-header">Featured Singles</h2>
         <div class="discography-grid">
             
-            <div class="album-card">
-                <!-- TOP 2 -->
-                <img src="https://i.scdn.co/image/ab67616d0000b27341e53a258079b768a8f89574" alt="Top 2">
-                <h4>TOP 2</h4>
-                <span>2026 • Single</span>
-            </div>
+            <a href="https://open.spotify.com/track/41e53a258079b768a8f89574" target="_blank" class="song-link">
+                <div class="album-card">
+                    <img src="top2.jpg" alt="Top 2" onerror="this.src='https://placehold.co/400?text=TOP+2'">
+                    <h4>TOP 2</h4>
+                </div>
+            </a>
 
-            <div class="album-card">
-                <!-- FREE SMOKE -->
-                <img src="https://i.scdn.co/image/ab67616d0000b273299716f6b59265f401f80749" alt="Free Smoke">
-                <h4>FREE SMOKE</h4>
-                <span>2025 • Single</span>
-            </div>
+            <a href="https://open.spotify.com/track/299716f6b59265f401f80749" target="_blank" class="song-link">
+                <div class="album-card">
+                    <img src="freesmoke.jpg" alt="Free Smoke" onerror="this.src='https://placehold.co/400?text=FREE+SMOKE'">
+                    <h4>FREE SMOKE</h4>
+                </div>
+            </a>
 
-            <div class="album-card">
-                <!-- ALL I KNOW -->
-                <img src="https://i.scdn.co/image/ab67616d0000b27346850d995646f9035225d31f" alt="All I Know">
-                <h4>ALL I KNOW</h4>
-                <span>2025 • Single</span>
-            </div>
+            <a href="https://open.spotify.com/track/46850d995646f9035225d31f" target="_blank" class="song-link">
+                <div class="album-card">
+                    <img src="alliknow.jpg" alt="All I Know" onerror="this.src='https://placehold.co/400?text=ALL+I+KNOW'">
+                    <h4>ALL I KNOW</h4>
+                </div>
+            </a>
 
-            <div class="album-card">
-                <!-- FEELIN AWAY -->
-                <img src="https://i.scdn.co/image/ab67616d0000b273676b701255562095f3299c85" alt="Feelin Away">
-                <h4>FEELIN AWAY</h4>
-                <span>2025 • Single</span>
-            </div>
+            <a href="https://open.spotify.com/track/676b701255562095f3299c85" target="_blank" class="song-link">
+                <div class="album-card">
+                    <img src="feelinaway.jpg" alt="Feelin Away" onerror="this.src='https://placehold.co/400?text=FEELIN+AWAY'">
+                    <h4>FEELIN AWAY</h4>
+                </div>
+            </a>
 
         </div>
-
-        <h2 class="section-header">Stream Full Catalog</h2>
-        <div class="player-wrapper">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/1pjb5aGYKrEPxSMK4txdhk?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-
     </div>
 
     <footer>
