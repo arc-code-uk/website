@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cee Cuatro | Socials</title>
+    <style>
+        :root {
+            --green: #1DB954;
+            --black: #050505;
+            --card: #121212;
+            --text-dim: #b3b3b3;
+        }
 
+        body {
+            margin: 0;
+            background: var(--black);
+            color: white;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .pfp {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--green);
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(29, 185, 84, 0.2);
+        }
+
+        h1 { font-size: 1.6rem; letter-spacing: 2px; margin: 0; font-weight: 900; }
+        .handle { color: var(--green); font-size: 0.9rem; margin-top: 5px; font-weight: bold; }
+
+        .links-wrap {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .link-item {
+            background: var(--card);
+            border: 1px solid #282828;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.1rem;
+        }
+
+        .link-item:hover {
+            background: #1f1f1f;
+            border-color: var(--green);
+            transform: scale(1.03);
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 50px;
+            font-size: 0.7rem;
+            color: #444;
+            letter-spacing: 2px;
+        }
+
+        .back-home {
+            margin-top: 25px;
+            text-decoration: none;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-bottom: 1px solid #333;
+            transition: 0.3s;
+        }
+        
+        .back-home:hover { color: white; border-color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="profile">
+        <img src="../top2.webp" class="pfp" alt="Cee Cuatro">
+        <h1>CEE CUATRO</h1>
+        <div class="handle">@ceecuatrotv</div>
+    </div>
+
+    <div class="links-wrap">
+        <a href="https://open.spotify.com/artist/1pjb5aGYKrEPxSMK4txdhk" class="link-item" target="_blank">
+            Spotify
+        </a>
+        <a href="https://www.tiktok.com/@ceecuatrotv" class="link-item" target="_blank">
+            TikTok
+        </a>
+        <a href="https://www.instagram.com/ceecuatrognt" class="link-item" target="_blank">
+            Instagram
+        </a>
+        <a href="https://www.youtube.com/@ceecuatrotv" class="link-item" target="_blank">
+            YouTube
+        </a>
+    </div>
+
+    <a href="../index.html" class="back-home">Back to Official Site</a>
+
+    <footer>WEST LONDON &copy; 2026</footer>
+
+</body>
+</html>
